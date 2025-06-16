@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.todolist.TodoListController" styleClass="root">
+    <top>
+        <VBox spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="✨ Sensational Todo List! ✨" styleClass="title-label" fx:id="titleLabel">
+                <effect>
+                    <DropShadow offsetX="2.0" offsetY="2.0">
+                        <color>
+                            <Color opacity="0.3"/>
+                        </color>
+                    </DropShadow>
+                </effect>
+            </Label>
+            <HBox spacing="10" alignment="CENTER" fx:id="inputBox">
+                <TextField fx:id="taskInput" promptText="Enter a new sensational task..." HBox.hgrow="ALWAYS" styleClass="text-field"/>
+                <Button fx:id="addTaskButton" text="Add Task" onAction="#handleAddTask" styleClass="button"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <ListView fx:id="taskListView" styleClass="list-view">
+            <BorderPane.margin>
+                <Insets left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </ListView>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 15;">
+            <HBox spacing="10" alignment="CENTER_RIGHT" fx:id="controlButtonsBox">
+                 <Button fx:id="markCompletedButton" text="Mark as Completed" onAction="#handleMarkAsCompleted" styleClass="button"/>
+                 <Button fx:id="removeTaskButton" text="Remove Task" onAction="#handleRemoveTask" styleClass="button"/>
+            </HBox>
+            <Button fx:id="removeCompletedButton" text="Remove All Completed Tasks" onAction="#handleRemoveCompletedTasks" styleClass="button-danger"/>
+        </VBox>
+    </bottom>
+</BorderPane>
