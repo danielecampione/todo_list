@@ -32,3 +32,7 @@ This is a simple Todo List application built with JavaFX and Maven.
 - Mark tasks as completed (checkbox will appear next to the task)
 - Remove individual tasks
 - Remove all completed tasks
+
+## Screenshot
+
+![Png](https://i.ibb.co/DjT2vdF/Immagine-2025-06-16-221645.png)
